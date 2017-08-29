@@ -31,12 +31,13 @@ public class Game
             return;
         }
 
-        // Draw cards for regular users
+        // Draw cards for regular plauyers
         while (RulesEngine.PlayerShouldDrawAnotherCard(player))
         {
             player.addCardToHand(this.deck.DrawCard());
         }
 
+        // Draw cards for dealer
         while (!RulesEngine.DealerGameIsOver(dealer, player))
         {
             dealer.addCardToHand(this.deck.DrawCard());
