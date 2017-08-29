@@ -7,7 +7,7 @@ import models.Player;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class GameTets extends TestBase
+public class GameTests extends TestBase
 {
     @Test
     public void Game_PredefinedDeck_playerShouldWin()

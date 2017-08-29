@@ -24,14 +24,14 @@ public class Game
         this.deck = deck;
         InitializePlayerHands(player, dealer);
 
-        // A player initially got >= 21
+        // A player initially got 21
         if (RulesEngine.GameIsOver(player, dealer))
         {
             HandleGameOver(player, dealer);
             return;
         }
 
-        // Draw cards for regular plauyers
+        // Draw cards for regular players
         while (RulesEngine.PlayerShouldDrawAnotherCard(player))
         {
             player.addCardToHand(this.deck.DrawCard());

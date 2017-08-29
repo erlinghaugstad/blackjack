@@ -5,30 +5,30 @@ import java.util.Queue;
 
 public class DeckOfCards
 {
-    private final Queue<Card> CardDeck;
+    private final Queue<Card> cardDeck;
 
-    public DeckOfCards(LinkedList<Card> CardDeck)
+    public DeckOfCards(LinkedList<Card> cardDeck)
     {
-        if (CardDeck.size() > 52)
+        if (cardDeck.size() > 52)
         {
-            throw new IllegalArgumentException(String.format("A card deck should have 52 cards, the supplied one had %s", CardDeck.size()));
+            throw new IllegalArgumentException(String.format("A card deck should have 52 cards, the supplied one had %s", cardDeck.size()));
         }
 
-        this.CardDeck = CardDeck;
+        this.cardDeck = cardDeck;
     }
 
     public Card DrawCard()
     {
-        if (this.CardDeck.size() == 0)
+        if (this.cardDeck.size() == 0)
         {
             throw new IndexOutOfBoundsException("No more cards left in deck");
         }
 
-        return this.CardDeck.remove();
+        return this.cardDeck.remove();
     }
 
     public int GetNumberOfCardsLeft()
     {
-        return this.CardDeck.size();
+        return this.cardDeck.size();
     }
 }

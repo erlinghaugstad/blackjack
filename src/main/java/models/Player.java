@@ -1,46 +1,45 @@
 package models;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 
 public class Player
 {
-    private final String Name;
-    private final LinkedList<Card> Hand;
-    private final PlayerType Type;
+    private final String name;
+    private final LinkedList<Card> hand;
+    private final PlayerType type;
 
-    public Player(String Name, PlayerType Type)
+    public Player(String name, PlayerType type)
     {
-        this.Name = Name;
-        this.Type = Type;
-        this.Hand = new LinkedList<>();
+        this.name = name;
+        this.type = type;
+        this.hand = new LinkedList<>();
     }
 
     public String getName()
     {
-        return this.Name;
+        return this.name;
     }
 
     public int getHandScore()
     {
-        return this.Hand.stream().mapToInt(i -> i.getValue()).sum();
+        return this.hand.stream().mapToInt(i -> i.getValue()).sum();
     }
 
     public void addCardToHand(Card c)
     {
-        this.Hand.add(c);
+        this.hand.add(c);
     }
 
     @Override
     public String toString()
     {
-        StringBuilder sb = new StringBuilder(this.Name + ": ");
+        StringBuilder sb = new StringBuilder(this.name + ": ");
 
-        for (int i = 0; i < this.Hand.size(); i++)
+        for (int i = 0; i < this.hand.size(); i++)
         {
-            sb.append(this.Hand.get(i).toString());
+            sb.append(this.hand.get(i).toString());
 
-            if (this.Hand.size() > i + 1)
+            if (this.hand.size() > i + 1)
             {
                 sb.append(", ");
             }
@@ -51,7 +50,7 @@ public class Player
 
     public PlayerType getType()
     {
-        return Type;
+        return type;
     }
 
     public enum PlayerType

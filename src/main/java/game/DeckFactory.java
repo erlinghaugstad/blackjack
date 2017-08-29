@@ -11,7 +11,6 @@ import static java.util.Collections.shuffle;
 
 public class DeckFactory
 {
-
     public static final String RANDOM_DECK = ", returning random deck for this session.";
 
     public static DeckOfCards CreateRandomDeck()
