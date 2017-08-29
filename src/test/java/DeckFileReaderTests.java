@@ -23,6 +23,6 @@ public class DeckFileReaderTests
     {
         IFileReader fileReader = new DeckFileReader();
         String testData = fileReader.ReadDeckFile("testdata/testdata1.txt");
-        Assert.assertEquals("CA, D5, H9, HQ, S8,\n", testData);
+        Assert.assertEquals("CA, D5, H9, HQ, S8,", testData.trim());
     }
 }
